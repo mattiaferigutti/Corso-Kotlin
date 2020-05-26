@@ -5,7 +5,7 @@ class Triangle(private val a: Double, private val b: Double,private val c: Doubl
         doubleArrayOf(a, b, c).run {
             forEachIndexed { i, side ->
                 require(side > 0) {
-                    "Side ${i+1} has value $side < 0" //throw an exception
+                    "Side ${i+1} has value $side <= 0" //throw an exception
                 }
             }
         }
@@ -24,6 +24,6 @@ class Triangle(private val a: Double, private val b: Double,private val c: Doubl
 }
 
 fun main() {
-    val triangle = Triangle(10.0, 10.0, 10.0)
+    val triangle = Triangle(0.0, 10.0, 10.0)
     triangle.getInfoTriangle()
 }
